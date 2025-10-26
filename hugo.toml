@@ -1,0 +1,23 @@
+theme= "PaperMod"
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+  [[menus.main]]
+    name = 'Products'
+    pageRef = '/products'
+    weight = 20
+  [[menus.main]]
+    name = 'Services'
+    pageRef = '/services'
+    weight = 30
+    
+    baseURL = 'https://example.org/'
+languageCode = 'en-US'
+title = 'Project Documentation'
+[params]
+  subtitle = 'Reference, Tutorials, and Explanations'
+  [params.contact]
+    email = 'info@example.org'
+    phone = '+1 206-555-1212'
