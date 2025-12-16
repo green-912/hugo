@@ -15,8 +15,8 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: สวนแห่งความคิดของนายเขียว
-  description: "พื้นที่แห่งความสงบ ความคิดสร้างสรรค์ และความเรียบง่าย"
-  keywords: [Blog, Portfolio, PaperMod]
+  description: "พื้นที่แห่งความสงบ ความคิดสร้างสรรค์ เรียบง่าย และการเรียนรู้ Linux / Networking"
+  keywords: [ Networking,Linux,Labs]
   author: Mr.Green
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
@@ -50,9 +50,9 @@ params:
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "Home"
+    text: "Mr.Green"
     icon: /apple-touch-icon.png
-    iconHeight: 35
+    iconHeight: 32
 
   # profile-mode
   profileMode:
@@ -71,8 +71,9 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: ณ ที่นี่คือพื้นที่ระหว่างใบไม้กับบรรทัดโค้ด—ที่ซึ่งความสงบและความคิดสร้างสรรค์เติบโตไปพร้อมกัน
+    Title: "ยินดีต้อนรับสู่สวนแห่งความคิดของนายเขียว \U0001F44B"
+    Content:  ณ ที่นี่คือพื้นที่ระหว่างใบไม้กับบรรทัดโค้ด—ที่ซึ่งความสงบและความคิดสร้างสรรค์เติบโตไปพร้อมกัน และ ที่นี่คือพื้นที่เรียนรู้เรื่อง Linux, Networking และการใช้ชีวิตอย่างเรียบง่าย
+     รวมทั้งบทความทดลอง, Labs, Case Studies และบันทึกความคิดระหว่างทาง
 
   socialIcons:
     - name: x
@@ -113,31 +114,58 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
-      weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
-    - identifier: about
-      name: เกี่ยวกับฉัน
-      url: /about/
-      weight: 40
-    - identifier: learning
-      name: พื้นที่เรียนรู้
-      url: /learning/
-      weight: 50
-    - identifier:
+    #- identifier: categories
+    #  name: categories
+    #  url: /categories/
+    #  weight: 10
+    #
+    - identifier: networking
       name: Networking
       url: /networking/
       weight: 10
-# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+    - identifier: linux
+      name: Linux
+      url: /linux/
+      weight: 20
+    - identifier: learning
+      name: พื้นที่เรียนรู้
+      url: /learning/
+      weight: 30
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 40
+    - identifier: bookstack
+      name: bookstack
+      url: https://nst-green.name
+      weight: 50
+    - identifier: about
+      name: เกี่ยวกับฉัน
+      url: /about/
+      weight: 60
+
+#กรณีต้องการซ้อนเมนู
+#
+#    - identifier: learning
+#      name: พื้นที่เรียนรู้
+#      url: /learning/
+#      weight: 30
+#
+#    - identifier: linux
+#      parent: learning
+#      name: Linux
+#      url: /linux/
+#      weight: 31
+#
+#    - identifier: networking
+#      parent: learning
+#      name: Networking
+#      url: /networking/
+#      weight: 32
+#
+      
+      
+      # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
   highlight:
@@ -148,11 +176,11 @@ markup:
     # lineNos: true
     # style: monokai
     
-  taxonomies:
-   category: categories    # หมวดใหญ่ เช่น OSI, TCP/IP, Labs
-   topic: topics        # หัวข้อย่อย เช่น ARP, DHCP, DNS
-   lab:  labs          # lab1, lab2, ...
-   tool:    tools         # Wireshark, Zeek, Suricata
+taxonomies:
+  category: categories    # หมวดใหญ่ เช่น OSI, TCP/IP, Labs
+  topic: topics        # หัวข้อย่อย เช่น ARP, DHCP, DNS
+  lab:  labs          # lab1, lab2, ...
+  tool:    tools         # Wireshark, Zeek, Suricata
 
 
 
