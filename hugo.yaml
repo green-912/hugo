@@ -1,4 +1,9 @@
-baseURL : "https://knupan.com/"
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+baseURL: "https://knupan.com/"
 title: สวนแห่งความคิดของนายเขียว—อบอุ่น เรียบง่าย และเป็นตัวคุณ
 #paginate: 5
 theme: PaperMod
@@ -13,22 +18,22 @@ minify:
   minifyOutput: true
 
 params:
-  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  env: production
   title: สวนแห่งความคิดของนายเขียว
   description: "พื้นที่แห่งความสงบ ความคิดสร้างสรรค์ เรียบง่าย และการเรียนรู้ Linux / Networking"
-  keywords: [ Networking,Linux,Labs]
+  keywords: [Networking, Linux, Labs, Security]
   author: Mr.Green
-  # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
 
+  # --- ส่วนการแสดงผล (Features) ---
   ShowReadingTime: true
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
+  ShowCodeCopyButtons: true   # <--- แนะนำให้เปิด True ครับ สาย Tech ชอบกด Copy คำสั่ง
   ShowWordCount: true
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
@@ -41,8 +46,6 @@ params:
   tocopen: false
 
   assets:
-    # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
     favicon: "<link / abs url>"
     favicon16x16: "<link / abs url>"
     favicon32x32: "<link / abs url>"
@@ -54,26 +57,10 @@ params:
     icon: /apple-touch-icon.png
     iconHeight: 32
 
-  # profile-mode
-  profileMode:
-    enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
-    buttons:
-      - name: Posts
-        url: posts
-      - name: Tags
-        url: tags
-
   # home-info mode
   homeInfoParams:
     Title: "ยินดีต้อนรับสู่สวนแห่งความคิดของนายเขียว \U0001F44B"
-    Content:  ณ ที่นี่คือพื้นที่ระหว่างใบไม้กับบรรทัดโค้ด—ที่ซึ่งความสงบและความคิดสร้างสรรค์เติบโตไปพร้อมกัน และ ที่นี่คือพื้นที่เรียนรู้เรื่อง Linux, Networking และการใช้ชีวิตอย่างเรียบง่าย
-     รวมทั้งบทความทดลอง, Labs, Case Studies และบันทึกความคิดระหว่างทาง
+    Content:  ณ ที่นี่คือพื้นที่ระหว่างใบไม้กับบรรทัดโค้ด—ที่ซึ่งความสงบและความคิดสร้างสรรค์เติบโตไปพร้อมกัน และ ที่นี่คือพื้นที่เรียนรู้เรื่อง Linux, Networking และการใช้ชีวิตอย่างเรียบง่าย รวมทั้งบทความทดลอง, Labs, Case Studies และบันทึกความคิดระหว่างทาง
 
   socialIcons:
     - name: x
@@ -83,26 +70,12 @@ params:
     - name: github
       url: "https://github.com/"
 
-  analytics:
-    google:
-      SiteVerificationTag: "XYZabc"
-    bing:
-      SiteVerificationTag: "XYZabc"
-    yandex:
-      SiteVerificationTag: "XYZabc"
-
   cover:
-    hidden: true # hide everywhere but not in structured data
-    hiddenInList: true # hide on list pages and home
-    hiddenInSingle: true # hide on single page
+    hidden: true 
+    hiddenInList: true 
+    hiddenInSingle: true 
 
-  editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
-
-  # for search
-  # https://fusejs.io/api/options.html
+  # Search Configuration
   fuseOpts:
     isCaseSensitive: false
     shouldSort: true
@@ -110,84 +83,60 @@ params:
     distance: 1000
     threshold: 0.4
     minMatchCharLength: 0
-    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    limit: 10 
     keys: ["title", "permalink", "summary", "content"]
+
+# --- ส่วนเมนู (Navigation) ---
 menu:
   main:
-    #- identifier: categories
-    #  name: categories
-    #  url: /categories/
-    #  weight: 10
-    #
+    - identifier: search
+      name: "🔍 ค้นหา"
+      url: /search/
+      weight: 10
+      #--- เมนูหลัก: พื้นที่เรียนรู้
+    - identifier: learning
+      name: "พื้นที่เรียนรู้"
+      url: /learning/
+      weight: 20
+      #--  เมนูย่อย: (Child Items)----
     - identifier: networking
-      name: Networking
-      url: /networking/
+      parent: learning
+      name: "Networking"
+      url: /learning/networking
       weight: 10
     - identifier: linux
-      name: Linux
-      url: /linux/
+      parent: learning
+      name: "Linx Mastery"
+      url: /learning/linux
       weight: 20
-    - identifier: learning
-      name: พื้นที่เรียนรู้
-      url: /learning/
+    - identifier: hugo
+      parent: learning
+      name: "Hugo&Web"
+      url: /learning/hugo-guide/
       weight: 30
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 40
+    - identifier: series
+      name: "ซีรีส์บทความ"
+      url: /series/
+      weight: 30
     - identifier: bookstack
-      name: bookstack
-      url: https://nst-green.name
+      name: "Bookstack"
+      url: "https://nst-green.name"
+      weight: 40
+    - identifier: blog
+      name: blog นายเขียว
+      url: https://wp.knupan.com
       weight: 50
-    - identifier: about
-      name: เกี่ยวกับฉัน
-      url: /about/
-      weight: 60
+      
 
-#กรณีต้องการซ้อนเมนู
-#
-#    - identifier: learning
-#      name: พื้นที่เรียนรู้
-#      url: /learning/
-#      weight: 30
-#
-#    - identifier: linux
-#      parent: learning
-#      name: Linux
-#      url: /linux/
-#      weight: 31
-#
-#    - identifier: networking
-#      parent: learning
-#      name: Networking
-#      url: /networking/
-#      weight: 32
-#
-      
-      
-      # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+# --- Syntax Highlighting ---
 pygmentsUseClasses: true
 markup:
   highlight:
     noClasses: false
-    # anchorLineNos: true
-    # codeFences: true
-    # guessSyntax: true
-    # lineNos: true
-    # style: monokai
-    
+
+# --- ระบบหมวดหมู่ (Taxonomies) ---
+# สำคัญ: เมื่อประกาศแล้ว Hugo จะไม่ใช้ค่า Default เราต้องประกาศ Tags กับ Categories ด้วยตัวเอง
 taxonomies:
-  category: categories    # หมวดใหญ่ เช่น OSI, TCP/IP, Labs
-  topic: topics        # หัวข้อย่อย เช่น ARP, DHCP, DNS
-  lab:  labs          # lab1, lab2, ...
-  tool:    tools         # Wireshark, Zeek, Suricata
-
-
-
-
-
-
-
-
-
-
+  category: categories    # หมวดใหญ่ (Networking, Linux)
+  tag: tags               # ป้ายกำกับย่อย (lab, tool, tshark, i3wm)
+  series: series          # ชุดบทความต่อเนื่อง (Network Analysis Ep.1...)
