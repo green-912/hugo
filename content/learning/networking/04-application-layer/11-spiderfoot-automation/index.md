@@ -1,13 +1,17 @@
 ---
 title: "Spiderfoot Automation: การเก็บข้อมูล OSINT แบบอัตโนมัติ"
 date: 2025-12-21
-draft: true
-categories: ["Networking"]
-series: ["Cyber Investigator Roadmap"]
-tags: ["draft", "investigation"]
+draft: false
+categories:
+  - Networking
+series:
+  - Cyber Investigator Roadmap
+tags:
+  - draft
+  - investigation
 cover:
-    image: "cover.jpg"
-    relative: true
+  image: cover.jpg
+  relative: true
 ---
 
 ## 🔍 บทนำ

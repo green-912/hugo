@@ -1,13 +1,17 @@
 ---
 title: "ICMP Analysis: อ่านค่าจาก Ping และ Traceroute เพื่อระบุตัวตนเป้าหมาย"
 date: 2025-12-21
-draft: true
-categories: ["Networking"]
-series: ["Cyber Investigator Roadmap"]
-tags: ["draft", "investigation"]
+draft: false
+categories:
+  - Networking
+series:
+  - Cyber Investigator Roadmap
+tags:
+  - draft
+  - investigation
 cover:
-    image: "cover.jpg"
-    relative: true
+  image: cover.jpg
+  relative: true
 ---
 
 ## 🔍 บทนำ

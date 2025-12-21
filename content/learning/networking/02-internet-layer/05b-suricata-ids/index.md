@@ -1,3 +1,20 @@
+---
+title: "Suricata: ยามเฝ้าประตูและระบบตรวจจับผู้บุกรุก (IDS/IPS"
+date: 2025-12-21
+draft: false
+categories:
+  - Networking
+series:
+  - Cyber Investigator Roadmap
+tags:
+  - draft
+  - investigation
+cover:
+  image: cover.jpg
+  relative: true
+---
+
+
 ! การแทรก **Suricata** ไว้ที่ช่วงรอยต่อของ L3/L4 นั้นเหมาะสมที่สุด เพราะ Suricata คือเครื่องมือระดับ "รุ่นใหญ่" ที่ทำหน้าที่เป็น **IDS/IPS** (ระบบตรวจจับและป้องกันการบุกรุก)
 
 หาก Tshark คือ "กล้องวงจรปิด" และ Zeek คือ "คนจดบันทึก" **Suricata** ก็คือ **"ยามหน้าประตู"** ที่ถือบัญชีดำ (Signatures) คอยตรวจดูว่า Packet ไหนมีพฤติกรรมเป็นผู้ร้ายตามที่ได้รับแจ้งมาหรือไม่ครับ

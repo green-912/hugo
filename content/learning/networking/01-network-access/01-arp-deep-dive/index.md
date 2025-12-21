@@ -1,13 +1,17 @@
 ---
 title: "ARP Deep Dive: วิเคราะห์การระบุตัวตนด้วย MAC Address"
 date: 2025-12-21
-draft: true
-categories: ["Networking"]
-series: ["Cyber Investigator Roadmap"]
-tags: ["draft", "investigation"]
+draft: false
+categories:
+  - Networking
+series:
+  - Cyber Investigator Roadmap
+tags:
+  - draft
+  - investigation
 cover:
-    image: "cover.jpg"
-    relative: true
+  image: cover.jpg
+  relative: true
 ---
 
 ## 🔍 บทนำ
