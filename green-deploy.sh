@@ -3,7 +3,7 @@
 # --- สวนแห่งความคิดของนายเขียว: Deployment & Backup Tool ---
 
 # ตั้งค่าตัวแปร (แก้ไขตรงนี้ให้ตรงกับข้อมูลของคุณ)
-REMOTE_USER="green"       # เปลี่ยนเป็นชื่อ User ที่คุณใช้
+REMOTE_USER="root"       # เปลี่ยนเป็นชื่อ User ที่คุณใช้
 REMOTE_HOST="knupan.com"
 REMOTE_DEST="/var/www/blog"
 
